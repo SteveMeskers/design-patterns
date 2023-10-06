@@ -1,0 +1,18 @@
+# DESCRIPTION
+An object which represents an instruction to perform a particulat action. Contains all information necessary for the action to be taken
+
+# USE CASE
+Ordinary statements are perishable
+    - Cannot undo member assignment
+    - Cannot directly serialize a sequence of actions (calls)
+
+Want an object that represents an operation
+
+## EXERCISE
+Implement the Account.process()  method to process different account commands.
+
+The rules are obvious:
+
+success indicates whether the operation was successful
+
+You can only withdraw money if you have enough in your account
