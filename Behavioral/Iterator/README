@@ -1,0 +1,11 @@
+# DESCRIPTION
+An object that facilitates the tracersal of a data structure
+
+# USE CASE
+A class that facilitates the traversal
+    - Keeps reference to current element
+    - Knows how to move to  a different method
+
+## EXERCISE
+Given the following definition of a Node , please implement preorder traversal right inside Node.
+The sequence returned should be the sequence of values,not their containing nodes.
