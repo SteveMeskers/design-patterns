@@ -1,0 +1,22 @@
+# DESCRIPTION
+A component that facilitates communication between other components without them necessarily being aware of each other or having direct (reference) access to each other
+
+# USE CASE
+Components may go in and out of a system at any time
+    - Chat room
+    - Players in MMORPG
+
+It makes no sense for them to have direct references to one another
+
+## EXERCISE
+Our system has any number of instances of Participant  classes. Each Participant has a value integer attribute, initially zero.
+
+A participant can say()  a particular value, which is broadcast to all other participants. At this point in time, every other participant is obliged to increase their value  by the value being broadcast.
+
+Example:
+
+Two participants start with values 0 and 0 respectively
+
+Participant 1 broadcasts the value 3. We now have Participant 1 value = 0, Participant 2 value = 3
+
+Participant 2 broadcasts the value 2. We now have Participant 1 value = 2, Participant 2 value = 3

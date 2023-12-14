@@ -5,6 +5,7 @@ An object that facilitates the tracersal of a data structure
 A class that facilitates the traversal
     - Keeps reference to current element
     - Knows how to move to  a different method
+Stateful iterators cannot be recursive
 
 ## EXERCISE
 Given the following definition of a Node , please implement preorder traversal right inside Node.
