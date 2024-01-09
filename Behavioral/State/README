@@ -1,0 +1,43 @@
+# DESCRIPTION
+A pattern in which the object's behavior is determined by its state. An object transitions from one state to another (something needs to trigger a transition)
+A formalized contruct which manages state and transitions is called a state machine
+
+# USE CASE
+Consider an ordinary telephone
+What you do with it depends on the state of the phone/line
+    - If its ringing or you want to make a call, you pick it up
+    - Phone must be off the hook to talk/make a call
+    - If you are trying to call somone, and it's bus, you put the handset down
+Changes in state can be explicit or in response to event (Observer Pattern)
+
+## EXERCISE
+A combination lock is a lock that opens after the right digits have been entered. A lock is preprogrammed with a combination (e.g., 12345 ) and the user is expected to enter this combination to unlock the lock.
+
+The lock has a Status field that indicates the state of the lock. The rules are:
+
+If the lock has just been locked (or at startup), the status is LOCKED.
+
+If a digit has been entered, that digit is shown on the screen. As the user enters more digits, they are added to Status.
+
+If the user has entered the correct sequence of digits, the lock status changes to OPEN.
+
+If the user enters an incorrect sequence of digits, the lock status changes to ERROR.
+
+Please implement the CombinationLock  class to enable this behavior. Be sure to test both correct and incorrect inputs.
+
+Here is an example unit test for the lock:
+
+class FirstTestSuite(unittest.TestCase):
+    def test_success(self):
+        cl = CombinationLock([1, 2, 3, 4, 5])
+        self.assertEqual('LOCKED', cl.status)
+        cl.enter_digit(1)
+        self.assertEqual('1', cl.status)
+        cl.enter_digit(2)
+        self.assertEqual('12', cl.status)
+        cl.enter_digit(3)
+        self.assertEqual('123', cl.status)
+        cl.enter_digit(4)
+        self.assertEqual('1234', cl.status)
+        cl.enter_digit(5)
+        self.assertEqual('OPEN', cl.status)

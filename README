@@ -1,0 +1,179 @@
+# Design Pattern descriptions
+
+## Behavioral
+
+### Chain Of Responsibility
+DESCRIPTION
+Ex. Issue happens at work with employee, who is to blame? Employee, Manager, CEO?
+Ex. Computer game where creatures have an attack and defense but those can be boosted by other cards
+
+USE CASE
+A chain of components who all get a chance to process a command or a query, optionally having a default
+processing implementation and an ability to terminate the processing chain.
+
+### Command
+DESCRIPTION
+An object which represents an instruction to perform a particulat action. Contains all information necessary for the action to be taken
+
+USE CASE
+Ordinary statements are perishable
+    - Cannot undo member assignment
+    - Cannot directly serialize a sequence of actions (calls)
+
+Want an object that represents an operation
+
+### Interpreter
+DESCRIPTION
+A component that processes structured text data. Does so by turning it into separate lexical tokens (lexing)
+and then interpreting sequences of said tokens (parsing)
+
+USE CASE
+Textual input needs to be processed
+Turing string into OOP based structures in a complicated process
+Examples:
+    Programming language compilers, interpreters, and IDEs.
+    Numeric expressions (3+4/5)
+    Regex
+
+### Iterator
+DESCRIPTION
+An object that facilitates the tracersal of a data structure
+
+USE CASE
+A class that facilitates the traversal
+    - Keeps reference to current element
+    - Knows how to move to  a different method
+Stateful iterators cannot be recursive
+
+### Mediator
+DESCRIPTION
+A component that facilitates communication between other components without them necessarily being aware of each other or having direct (reference) access to each other
+
+USE CASE
+Components may go in and out of a system at any time
+    - Chat room
+    - Players in MMORPG
+
+It makes no sense for them to have direct references to one another
+
+### Memento
+DESCRIPTION
+A token/handle representing the system state. Lets us roll back to the state when the token was generated. May or may not directly expose state information. If the information is immutable then there is no problem exposing it
+
+USE CASE
+An object or system goes through changes
+    - Bank accounts get deposits and withdrawls
+There are different ways of navigating those changes
+One way is to record every change (Command pattern) and teach a command to 'undo' itself
+Another is to simply save snapshots of the system (memento)
+
+### Observer
+DESCRIPTION
+An observer is an object that wishes to be informed about events happening in the system. The entity generating the events is an observable
+
+USE CASE
+We need to be informed when certain thing happens
+    - Object property changes
+    - Object does something
+    - Some external event occurs
+We want to listen to events and be notified when they occur
+    - Notifications should include useful data
+Want to unsubscribe from events if we are no longer interested
+
+### State
+DESCRIPTION
+A pattern in which the object's behavior is determined by its state. An object transitions from one state to another (something needs to trigger a transition)
+A formalized contruct which manages state and transitions is called a state machine
+
+USE CASE
+Consider an ordinary telephone
+What you do with it depends on the state of the phone/line
+    - If its ringing or you want to make a call, you pick it up
+    - Phone must be off the hook to talk/make a call
+    - If you are trying to call somone, and it's bus, you put the handset down
+Changes in state can be explicit or in response to event (Observer Pattern)
+
+## Creational
+
+### Builder
+DESCRIPTION
+Builder provides API for constructing an object step by step
+
+USE CASE
+When contructor is taking a lot of argurments use builder to create object in piece wise manner
+
+### Factory
+DESCRIPTION
+A component that is solely responsible for wholesale object creation (not piece-wise)
+
+USE CASE
+Object creation is too convoluted
+Too many optional args in constructor
+
+### Prototype
+DESCRIPTION
+Partially or fully initialized object that you can copy and make use of
+
+USE CASE
+To build complicated objects by reiterating existing designs by deep copying existing object and changing values as needed
+
+### Singleton
+DESCRIPTION
+Class that is instanciated only once
+
+USE CASE
+Prevent object from being initialized more than once like database repository or object factory.
+
+## Structual
+
+### Adapter
+DESCRIPTION
+A construct which adapts an existing interface x to conform to the required interface y
+
+USE CASE
+When the api you are using doesnt match what you are working with
+
+### Bridge
+DESCRIPTION
+A mechanism that decouples an interface (hierarchy) from an implementation (heirarchy)
+
+USE CASE
+Prevents Cartesian product complexity explosion
+
+### Composite
+DESCRIPTION
+A mechanism for treating individual objects and compositions of objects in a uniform manner
+
+USE CASE
+To be able to build compound objects using other objects's propertys/members through inheritance or composition
+
+### Decorator
+DESCRIPTION
+Facilitates the addition of behaviors to individual objects without inheriting from them
+
+USE CASE
+Add extra features to an object without rewriting or editing existing code
+Want new functionality seperate from object
+Need to still interact with existing structures
+
+### Facade
+DESCRIPTION
+Provides a simple, easy to understand/user interface over a large and sophisticated body of code
+
+USE CASE
+Balancing complexity and usablity/presentation. Ex a house has many subsystems but the end user is not exposed to them
+
+### Flyweight
+DESCRIPTION
+A space optimization technique that lets us use less memory by storing externallly the data associated with similar objects
+
+USE CASE
+To avoid redundency when storing data
+
+### Proxy
+DESCRIPTION
+A class that functions as an interface to a particular resource. That resource may be remote, expensive to construct, or may require logging or some other additional functionality.
+
+USE CASE
+Example you are calling foo.Bar() and assume that foo is in the same process as Bar(). If you want to later pull all foo related
+options into another process you can use a proxy. The proxy will have the same interface but different behavior.
