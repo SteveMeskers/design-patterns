@@ -93,6 +93,33 @@ What you do with it depends on the state of the phone/line
     - If you are trying to call somone, and it's bus, you put the handset down
 Changes in state can be explicit or in response to event (Observer Pattern)
 
+### Strategy
+# DESCRIPTION
+Enables the exact behavior of the system to be selected at run-time
+
+# USE CASE
+Many algorithms can be decomposed into higher and lower level parts
+Making tea can be decomposed into
+    - The process of making hot beverage (boil water, pour into cup)
+    - Tea-specific things (put teabag in water)
+The high-level algorithm can then be reused for making coffe or hot chocolate
+    - Supported by beverage-specific strategies
+
+### Template Method
+# DESCRIPTION
+Allows us to define the 'skeleton' of the algorithm, with concrete implementations defined in subclasses
+
+# USE CASE
+Alorithms can be decomposed into common parts + specifics
+Strategy pattern does this through composition
+    - High-level algorithm expects strategies to conform to an interface
+    - Concrete implementations implement the interface
+Template Method does the same thing through inheritance
+    - Overall algorithm defined in base class
+    - Makes use of abract members
+    - Inheritors override the abstract members
+    - Template method invoken to get work done
+
 ## Creational
 
 ### Builder
