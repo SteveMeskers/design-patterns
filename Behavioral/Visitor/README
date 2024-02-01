@@ -1,0 +1,28 @@
+# DESCRIPTION
+A component (visitor) that knows how to traverse a data structure composed of (possibly related) types
+
+# USE CASE
+Need to define a new operation on an entire class hierarchy
+    - Ex, make a document model printalbe to HTML/Markdown
+Do not want to keep mofidying every class in the hierarchy
+Need access to the non-common aspects of classes in the heirarchy
+Create an external component to handle rendering
+    - But avoid explicit type checks
+
+## EXERCISE
+You are asked to implement a visitor called ExpressionPrinter  for printing different mathematical expressions. The range of expressions covers addition and multiplication - please put round brackets around addition operations (but not multiplication ones)! Also, please avoid any blank spaces in output.
+
+Example:
+
+Input: AdditionExpression(Value(2), Value(3))
+
+Output: (2+3)
+
+Here is the corresponding unit test:
+
+class Evaluate(unittest.TestCase):
+    def test_simple_addition(self):
+        simple = AdditionExpression(Value(2), Value(3))
+        ep = ExpressionPrinter()
+        ep.visit(simple)
+        self.assertEqual("(2+3)", str(ep))
