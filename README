@@ -122,9 +122,15 @@ Template Method does the same thing through inheritance
 
 ### Visitor
 # DESCRIPTION
-
+A component (visitor) that knows how to traverse a data structure composed of (possibly related) types
 
 # USE CASE
+Need to define a new operation on an entire class hierarchy
+    - Ex, make a document model printalbe to HTML/Markdown
+Do not want to keep mofidying every class in the hierarchy
+Need access to the non-common aspects of classes in the heirarchy
+Create an external component to handle rendering
+    - But avoid explicit type checks
 
 
 ## Creational
